@@ -9013,6 +9013,18 @@ styled-components@^4.2.0:
     stylis-rule-sheet "^0.0.10"
     supports-color "^5.5.0"
 
+styled-grid-component@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/styled-grid-component/-/styled-grid-component-1.1.13.tgz#28ea8ba277252f1e8dc383079905bb3ceb2018fd"
+  integrity sha512-AS4QtIjV0eWJU6RmPHX0Yj5cVN87UJ8pFTrkMepG9FngbaL0qAoPk24ZW2dtQndeyYldD8JugnbkZDj8GWhg2w==
+  dependencies:
+    styled-is "1.1.0"
+
+styled-is@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/styled-is/-/styled-is-1.1.0.tgz#0cf8d32098fe6559eb0ec889790cc6c84f1f497f"
+  integrity sha1-DPjTIJj+ZVnrDsiJeQzGyE8fSX8=
+
 stylehacks@^4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/stylehacks/-/stylehacks-4.0.3.tgz#6718fcaf4d1e07d8a1318690881e8d96726a71d5"
