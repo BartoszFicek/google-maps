@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Map } from "./Map";
 
 class App extends Component {
   render() {
-    return <div>Hello</div>;
+    return (
+      <div>
+        <Map id="myMap" />
+      </div>
+    );
   }
 }
 
