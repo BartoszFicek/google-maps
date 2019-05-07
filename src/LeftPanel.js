@@ -2,13 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { addToList, deleteFromList } from "./index";
 import * as S from "./styled";
-import styled from "styled-components";
 
 class LeftPanel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { activeKey: -1 };
-  }
   render() {
     return (
       <S.LeftPanelWrapper>
@@ -27,23 +22,13 @@ class LeftPanel extends React.Component {
 
         {this.props.places.map((place, key) => {
           return (
-            <div
-              onClick={() => {
-                this.setState({
-                  activeKey: key === this.state.activeKey ? -1 : key
-                });
-              }}
-            >
-              <Place
-                key
-                i={key}
-                activeKey={this.state.activeKey}
-                name={place.name}
-                lat={place.lat}
-                lng={place.lng}
-                deleteFunction={this.props.deleteFromList}
-              />
-            </div>
+            <Place
+              key
+              name={place.name}
+              lat={place.lat}
+              lng={place.lng}
+              deleteFunction={this.props.deleteFromList}
+            />
           );
         })}
       </S.LeftPanelWrapper>
@@ -67,32 +52,32 @@ export default connect(
   mapDispatchToProps
 )(LeftPanel);
 
-type PlacePropsT = {
-  i: number,
-  activeKey: number,
-  name: string,
-  lat: float,
-  lng: float,
-  deleteFunction: any
-};
-const Place = (props: PlacePropsT) => {
-  return (
-    <S.PlaceWrapper>
-      <S.PlaceName>
-        {props.name}
-        {props.i === props.activeKey ? (
-          <S.LatLng>
-            Ltd: {props.lat} <br />
-            Lng: {props.lng}
-          </S.LatLng>
-        ) : null}
-      </S.PlaceName>
-      <S.RemovePlaceButton
-        title="Remove place from list"
-        onClick={() => props.deleteFunction(props.lat, props.lng)}
-      >
-        <div style={{ marginTop: "-3px" }}>-</div>
-      </S.RemovePlaceButton>
-    </S.PlaceWrapper>
-  );
-};
+class Place extends React.Component {
+  state = { active: false };
+
+  render() {
+    return (
+      <S.PlaceWrapper>
+        <S.PlaceName
+          onClick={() => this.setState({ active: !this.state.active })}
+        >
+          {this.props.name}
+          {this.state.active ? (
+            <S.LatLng>
+              Ltd: {this.props.lat} <br />
+              Lng: {this.props.lng}
+            </S.LatLng>
+          ) : null}
+        </S.PlaceName>
+        <S.RemovePlaceButton
+          title="Remove place from list"
+          onClick={() =>
+            this.props.deleteFunction(this.props.lat, this.props.lng)
+          }
+        >
+          <div style={{ marginTop: "-3px" }}>-</div>
+        </S.RemovePlaceButton>
+      </S.PlaceWrapper>
+    );
+  }
+}
