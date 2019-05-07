@@ -1,6 +1,4 @@
-export const defaultAction = state => {
-  return {
-    type: "DEFAULT",
-    state: state
-  };
-};
+export const getSelectedPoints = (point = {}) => ({
+  type: "SELECT_POINT",
+  payload: point
+});

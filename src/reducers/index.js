@@ -1,6 +1,4 @@
 import { combineReducers } from "redux";
-import MainReducer from "./MainReducer";
+import SelectedPointsReducer from "./SelectedPointsReducer";
 
-export default combineReducers({
-  reducer: MainReducer
-});
+export default combineReducers({ points: SelectedPointsReducer });

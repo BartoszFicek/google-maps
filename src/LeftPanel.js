@@ -52,6 +52,7 @@ const PlaceWrapper = styled.div`
   font-weight: 400;
   text-align: center;
   position: relative;
+  border-radius: 4px;
 `;
 
 const places = [
@@ -75,13 +76,14 @@ const places = [
 const RemoveButton = styled.button`
   position: absolute;
   right: 5px;
-  top: 2px;
+  top: 5px;
   color: #fff;
   background-color: rgb(225, 0, 80);
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   padding: 0;
   font-size: 1.2rem;
+
   border: 0 solid white;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 16px 0px rgba(0, 0, 0, 0.12);

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { Map } from "./Map";
+import Map from "./Map";
 import { LeftPanel } from "./LeftPanel";
 
 class App extends Component {
@@ -14,19 +14,7 @@ class App extends Component {
     );
   }
 }
-
-const mapStateToProps = state => {
-  return {};
-};
-
-const mapDispatchToProps = dispatch => {
-  return {};
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default App;
 
 const Wrapper = styled.div`
   width: 100vw;
