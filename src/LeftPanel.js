@@ -5,6 +5,10 @@ import * as S from "./styled";
 import styled from "styled-components";
 
 class LeftPanel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { activeKey: -1 };
+  }
   render() {
     return (
       <S.LeftPanelWrapper>
@@ -21,14 +25,25 @@ class LeftPanel extends React.Component {
           </S.Input>
         </S.PanelTitle>
 
-        {this.props.places.map(place => {
+        {this.props.places.map((place, key) => {
           return (
-            <Place
-              name={place.name}
-              lat={place.lat}
-              lng={place.lng}
-              deleteFunction={this.props.deleteFromList}
-            />
+            <div
+              onClick={() => {
+                this.setState({
+                  activeKey: key === this.state.activeKey ? -1 : key
+                });
+              }}
+            >
+              <Place
+                key
+                i={key}
+                activeKey={this.state.activeKey}
+                name={place.name}
+                lat={place.lat}
+                lng={place.lng}
+                deleteFunction={this.props.deleteFromList}
+              />
+            </div>
           );
         })}
       </S.LeftPanelWrapper>
@@ -53,6 +68,8 @@ export default connect(
 )(LeftPanel);
 
 type PlacePropsT = {
+  i: number,
+  activeKey: number,
   name: string,
   lat: float,
   lng: float,
@@ -60,8 +77,16 @@ type PlacePropsT = {
 };
 const Place = (props: PlacePropsT) => {
   return (
-    <S.PlaceWrapper onClick={() => console.log("Siema")}>
-      <S.PlaceName>{props.name}</S.PlaceName>
+    <S.PlaceWrapper>
+      <S.PlaceName>
+        {props.name}
+        {props.i === props.activeKey ? (
+          <S.LatLng>
+            Ltd: {props.lat} <br />
+            Lng: {props.lng}
+          </S.LatLng>
+        ) : null}
+      </S.PlaceName>
       <S.RemovePlaceButton
         title="Remove place from list"
         onClick={() => props.deleteFunction(props.lat, props.lng)}

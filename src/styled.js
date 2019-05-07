@@ -29,7 +29,7 @@ export const PlaceWrapper = styled.div`
 `;
 
 export const PlaceName = styled.div`
-  margin: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 0px;
   padding: 5px 15px 5px 5px;
   font-size: 1rem;
   font-weight: 400;
@@ -115,4 +115,10 @@ export const Input = styled.div`
       border: 1px solid #2196f3;
     }
   }
+`;
+
+export const LatLng = styled.div`
+  margin-top: 10px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
 `;
