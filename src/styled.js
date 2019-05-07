@@ -38,6 +38,7 @@ export const PlaceName = styled.div`
   border-radius: 4px;
   :hover {
     cursor: pointer;
+    box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
   }
 `;
 
