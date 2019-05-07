@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { connect } from "react-redux";
-import Map from "./Map";
-import { LeftPanel } from "./LeftPanel";
 
-class App extends Component {
+import Map from "./Map";
+import LeftPanel from "./LeftPanel";
+
+export default class App extends Component {
   render() {
     return (
       <Wrapper>
@@ -14,7 +14,6 @@ class App extends Component {
     );
   }
 }
-export default App;
 
 const Wrapper = styled.div`
   width: 100vw;
