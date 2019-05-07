@@ -16,9 +16,9 @@ class LeftPanel extends React.Component {
           >
             +
           </S.AddPlaceButton>
-          <Input>
+          <S.Input>
             <input id="place-input" placeholder="Enter a location" />
-          </Input>
+          </S.Input>
         </S.PanelTitle>
 
         {this.props.places.map(place => {
@@ -35,19 +35,6 @@ class LeftPanel extends React.Component {
     );
   }
 }
-
-const Input = styled.div`
-  margin-top: 5px;
-  input {
-    height: 20px;
-    width: 60%;
-    font-size: 13px;
-    padding-left: 4px;
-    border-radius: 4px;
-    outline: none;
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2);
-  }
-`;
 
 const mapStateToProps = state => {
   return { points: state.points, places: state.places };

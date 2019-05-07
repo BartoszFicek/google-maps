@@ -94,3 +94,24 @@ export const AddPlaceButton = styled.button`
     cursor: pointer;
   }
 `;
+
+export const Input = styled.div`
+  margin-top: 5px;
+  input {
+    height: 20px;
+    width: 60%;
+    font-size: 13px;
+    font-weight: 500;
+    transition-duration: 0.5s;
+    padding-left: 8px;
+    border-radius: 12px;
+    outline: none;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-image: none;
+    :focus {
+      transition-duration: 0.5s;
+      border: 1px solid #2196f3;
+    }
+  }
+`;
